@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun Nita!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #e6f7ff);
+      color: #4a4a4a;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    h1 {
+      color: #ff69b4;
+      margin-top: 40px;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 20px 30px;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px auto;
+      gap: 15px;
+      max-width: 900px;
+    }
+    .gallery img {
+      width: 260px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .flower-bg {
+      background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+    }
+
+    .flower {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      top: -30px;
+      background-image: url('https://emojicdn.elk.sh/🌸');
+      background-size: cover;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body class="flower-bg">
+  <h1>🌸 Selamat Ulang Tahun Nita!! 🌸</h1>
+  <p>Anjir 21th🫡 Semoga bisa terus foya-foya yaa. BTW kpn" main brg lg yaa☺️</p>
+
+  <div class="gallery">
+    <img src="https://files.oaiusercontent.com/file-6e6e9a1f-10b5-4be3-a7ae-4e6939bc4d88_1680x945.jpg" alt="Foto bareng 1">
+    <img src="https://files.oaiusercontent.com/file-f22c02ec-58a3-4e3a-8de2-e776dd0606fd_1536x2048.jpg" alt="Foto bareng 2">
+    <img src="https://files.oaiusercontent.com/file-88ae884c-2a02-4f6d-91e4-55308899c15c_1536x2048.jpg" alt="Foto bareng 3">
+  </div>
+
+  <script>
+    function createFlower() {
+      const flower = document.createElement("div");
+      flower.className = "flower";
+      flower.style.left = Math.random() * window.innerWidth + "px";
+      flower.style.animationDuration = 3 + Math.random() * 5 + "s";
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 8000);
+    }
+    setInterval(createFlower, 300);
+  </script>
+</body>
+</html>
